@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ja"> <head><meta charset="utf-8"><link rel="icon" type="image/png" href="/umamusume-efficiency-skills/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"><meta name="generator" content="Astro v7.2.9"><title>ウマ娘 高効率スキル サポート検索</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/umamusume-efficiency-skills/_astro/index.C_TjZYGd.css"></head> <body class="flex min-h-screen flex-col bg-stone-200 text-stone-800"> <div class="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-8 bg-white px-4 py-8"> <header class="flex flex-col gap-2"> <h1 class="text-2xl font-bold text-stone-900">ウマ娘 高効率スキル サポート検索</h1> <div class="flex flex-wrap items-center justify-between gap-2 text-sm text-stone-500"> <p>
 対象サポート数:
 <span class="font-medium text-stone-700">540 / 556</span>
-（2026/9/2時点）
+（2026/9/5時点）
 </p> <div class="flex items-center gap-4"> <button type="button" id="share-url-btn" class="btn-success">共有URLをコピー</button> <button type="button" id="reset-btn" class="btn-reset">リセット</button> </div> </div> </header> <div class="flex flex-col gap-4"> <div class="flex gap-1 border-b border-stone-200"> <button type="button" id="tab-skill-name" class="tab-btn tab-btn-active">スキル名から探す</button> <button type="button" id="tab-skill-count" class="tab-btn">保有スキル数から探す</button> </div> <div id="type-filter" class="flex flex-wrap gap-x-4 gap-y-2 text-sm"></div> <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm"> <label class="inline-flex cursor-pointer items-center gap-2"> <input type="checkbox" id="rarity-ssr" checked class="h-4 w-4 accent-[#121714]">
 SSR
 </label> <label class="inline-flex cursor-pointer items-center gap-2"> <input type="checkbox" id="rarity-sr" checked class="h-4 w-4 accent-[#121714]">
@@ -26,9 +26,7 @@ R
 所持数:
 <input type="number" id="count-threshold" value="3" min="1" class="field-input w-16">
 個以上
-</label> <button id="count-search" type="button" class="btn-accent">検索</button> </div> <div id="count-results"></div> </section> </div> <section class="flex flex-col gap-4 border-t-2 border-stone-300 pt-8"> <h2 class="section-title">サポート編成</h2> <div class="flex flex-col gap-3 sm:flex-row sm:items-start"> <input type="text" id="deck-support-filter" placeholder="サポート名・キャラ名で絞り込み" class="field-input sm:max-w-xs"> <select id="deck-support-select" multiple size="10" class="field-select flex-1"></select> <button id="deck-add-btn" type="button" class="btn-primary shrink-0">編成に追加</button> </div> <p id="deck-warning" class="text-sm font-medium text-red-600"></p> <div> <button id="deck-skills-toggle" type="button" class="btn-secondary">個別該当スキル表示</button> </div> <div id="deck-list"></div> <div id="deck-summary" class="flex flex-col gap-2 text-sm"></div> </section> </div> <footer class="mt-auto border-t border-stone-200 bg-white px-4 py-4 text-sm text-stone-500"> <div class="mx-auto flex w-full max-w-5xl flex-col gap-2"> <button type="button" id="about-toggle" class="w-fit cursor-pointer text-[#473F50] hover:underline">
-このサイトについて
-</button> <div id="about-content" class="flex flex-col gap-2" hidden> <p>高効率スキルのみ特化して検索するためのサイトです。</p> <p>
+</label> <button id="count-search" type="button" class="btn-accent">検索</button> </div> <div id="count-results"></div> </section> </div> <section class="flex flex-col gap-4 border-t-2 border-stone-300 pt-8"> <h2 class="section-title">サポート編成</h2> <div class="flex flex-col gap-3 sm:flex-row sm:items-start"> <input type="text" id="deck-support-filter" placeholder="サポート名・キャラ名で絞り込み" class="field-input sm:max-w-xs"> <select id="deck-support-select" multiple size="10" class="field-select flex-1"></select> <button id="deck-add-btn" type="button" class="btn-primary shrink-0">編成に追加</button> </div> <p id="deck-warning" class="text-sm font-medium text-red-600"></p> <div> <button id="deck-skills-toggle" type="button" class="btn-secondary">個別該当スキル表示</button> </div> <div id="deck-list"></div> <div id="deck-summary" class="flex flex-col gap-2 text-sm"></div> </section> </div> <footer class="mt-auto border-t border-stone-200 bg-white px-4 py-4 text-sm text-stone-500"> <div class="mx-auto flex w-full max-w-5xl flex-col gap-2"> <h2 class="w-fit font-bold text-[#473F50]">このサイトについて</h2> <div id="about-content" class="flex flex-col gap-2"> <p>高効率スキルのみ特化して検索するためのサイトです。</p> <p>
 一部スキルはサポートから入手できません（川崎レース場〇、新潟レース場〇、福島レース場〇、サンタアニタパークレース場〇、デルマーレース場〇、中京レース場〇、土煙）。これらは予め掲載していませんのでご注意ください。
 </p> <p>
 高効率スキルの選定については見る用様の
@@ -45,4 +43,4 @@ const base = "/umamusume-efficiency-skills/";
 			window.__SUPPORTS__ = supports;
 			window.__CATEGORY_ORDER__ = categoryOrder;
 			window.__BASE__ = base;
-		})();</script><script type="module" src="/umamusume-efficiency-skills/_astro/index.astro_astro_type_script_index_0_lang.Da-OlibI.js"></script></body> </html>
+		})();</script><script type="module" src="/umamusume-efficiency-skills/_astro/index.astro_astro_type_script_index_0_lang.D0vFlrtu.js"></script></body> </html>
